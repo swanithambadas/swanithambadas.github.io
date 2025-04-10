@@ -6,28 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Include Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Customizing Tailwind's default theme with an accent color.
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#00AEEF',
+          },
+          boxShadow: {
+            'card': '0 4px 6px rgba(0, 0, 0, 0.1)',
+            'card-hover': '0 10px 15px rgba(0, 0, 0, 0.2)',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <header class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-xl font-bold text-gray-800">Swanith Ambadas</div>
+      <div class="text-2xl font-extrabold text-gray-900">Swanith Ambadas</div>
       <nav class="flex items-center space-x-6">
-        <!-- Main Navigation Links -->
         <ul class="flex space-x-6">
-          <li><a href="#hero" class="hover:text-blue-500 transition-colors">Home</a></li>
-          <li><a href="#about" class="hover:text-blue-500 transition-colors">About</a></li>
-          <li><a href="#portfolio" class="hover:text-blue-500 transition-colors">Portfolio</a></li>
-          <li><a href="#certifications" class="hover:text-blue-500 transition-colors">Certifications</a></li>
-          <li><a href="#resume" class="hover:text-blue-500 transition-colors">Resume</a></li>
-          <li><a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a></li>
+          <li><a href="#hero" class="font-semibold hover:text-accent transition-colors">Home</a></li>
+          <li><a href="#about" class="font-semibold hover:text-accent transition-colors">About</a></li>
+          <li><a href="#resume" class="font-semibold hover:text-accent transition-colors">Resume</a></li>
+          <li><a href="#portfolio" class="font-semibold hover:text-accent transition-colors">Portfolio</a></li>
+          <li><a href="#certifications" class="font-semibold hover:text-accent transition-colors">Certifications</a></li>
+          <li><a href="#contact" class="font-semibold hover:text-accent transition-colors">Contact</a></li>
         </ul>
         <!-- Social Icon Links -->
         <div class="flex space-x-4">
-          <a href="https://github.com/yourGitHubUsername" target="_blank" class="hover:opacity-75 transition-opacity">
+          <a href="https://github.com/yourGitHubUsername" target="_blank" class="transition-transform hover:scale-110">
             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon" class="w-6 h-6" />
           </a>
-          <a href="https://www.linkedin.com/in/yourLinkedInProfile" target="_blank" class="hover:opacity-75 transition-opacity">
+          <a href="https://www.linkedin.com/in/yourLinkedInProfile" target="_blank" class="transition-transform hover:scale-110">
             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" class="w-6 h-6" />
           </a>
         </div>
@@ -35,73 +50,88 @@
     </div>
   </header>
 
-  <!-- Hero Section with Gradient Background -->
-  <section id="hero" class="pt-24 bg-gradient-to-r from-blue-500 to-purple-500">
-    <div class="max-w-7xl mx-auto px-4 py-16 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Master's in Computer Science</h1>
-      <p class="text-lg md:text-xl mb-8 text-white">Innovating AI solutions for tomorrow's challenges.</p>
-      <a href="#portfolio" class="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-3 px-6 rounded-md transition-colors">
+  <!-- Hero Section with Vibrant Gradient -->
+  <section id="hero" class="pt-24 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+    <div class="max-w-7xl mx-auto px-4 py-20 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">Master's in Computer Science</h1>
+      <p class="text-xl md:text-2xl mb-8 text-white">Innovating AI solutions for tomorrow's challenges.</p>
+      <a href="#portfolio" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
         View Portfolio
       </a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
       <div class="md:w-1/2">
-        <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="text-base md:text-lg">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">About Me</h2>
+        <p class="text-lg text-gray-700">
           I am a Master’s in Computer Science student specializing in AI models and projects.
-          Through hands-on projects in machine learning and deep learning, I have developed solutions
-          that harness data to solve complex challenges. I'm passionate about merging technology with
-          practical applications.
+          Through hands-on experience in machine learning and deep learning, I develop innovative solutions that harness data for real-world impact.
+          I'm passionate about merging cutting-edge technology with practical applications.
         </p>
       </div>
       <div class="md:w-1/2">
-        <img src="https://via.placeholder.com/400x400.png?text=Your+Photo" alt="Your Photo" class="rounded-lg shadow-lg" />
+        <img src="https://via.placeholder.com/400x400.png?text=Your+Photo" alt="Your Photo" class="rounded-full shadow-2xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section (Added after About) -->
+  <section id="resume" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-gray-900">Resume</h2>
+      <p class="text-lg text-gray-700 mb-8">Explore my resume to see a comprehensive overview of my projects, skills, and professional experience.</p>
+      <div class="flex justify-center gap-6">
+        <a href="resume.pdf" download class="px-6 py-3 bg-accent text-white font-semibold rounded-xl shadow-card transform hover:scale-105 transition-transform">
+          Download Resume
+        </a>
+        <a href="resume.pdf" target="_blank" class="px-6 py-3 bg-accent text-white font-semibold rounded-xl shadow-card transform hover:scale-105 transition-transform">
+          View Resume
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16 bg-gray-50">
+  <section id="portfolio" class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Portfolio</h2>
+      <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">Portfolio</h2>
       <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <!-- Project Card 1 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">AI Project 1</h3>
+        <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
+          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 1</h3>
             <p class="text-gray-600 mb-4">
-              A short description highlighting the project’s problem, approach, and key technologies used.
+              A brief overview of the project’s challenge, innovative approach, and key technologies.
             </p>
-            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium transition-colors">View Details</a>
+            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
 
         <!-- Project Card 2 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">AI Project 2</h3>
+        <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
+          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 2</h3>
             <p class="text-gray-600 mb-4">
-              A short description highlighting the project’s problem, approach, and key technologies used.
+              A brief overview of the project’s challenge, innovative approach, and key technologies.
             </p>
-            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium transition-colors">View Details</a>
+            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
 
         <!-- Project Card 3 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">AI Project 3</h3>
+        <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
+          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 3</h3>
             <p class="text-gray-600 mb-4">
-              A short description highlighting the project’s problem, approach, and key technologies used.
+              A brief overview of the project’s challenge, innovative approach, and key technologies.
             </p>
-            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium transition-colors">View Details</a>
+            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
       </div>
@@ -109,43 +139,17 @@
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="py-16">
+  <section id="certifications" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Certifications</h2>
+      <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">Certifications</h2>
       <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <!-- Certification Card 1 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 p-4 flex flex-col items-center">
+        <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-6 flex flex-col items-center">
           <img src="https://via.placeholder.com/100.png?text=Logo" alt="Certification Logo" class="mb-4">
-          <h3 class="text-xl font-semibold mb-2">Certification 1</h3>
+          <h3 class="text-2xl font-bold text-gray-800 mb-2">Certification 1</h3>
           <p class="text-gray-600 mb-2 text-center">Issued by Provider</p>
           <span class="text-sm text-gray-500">2023</span>
         </div>
         <!-- Certification Card 2 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 p-4 flex flex-col items-center">
-          <img src="https://via.placeholder.com/100.png?text=Logo" alt="Certification Logo" class="mb-4">
-          <h3 class="text-xl font-semibold mb-2">Certification 2</h3>
-          <p class="text-gray-600 mb-2 text-center">Issued by Provider</p>
-          <span class="text-sm text-gray-500">2023</span>
-        </div>
-        <!-- Certification Card 3 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 p-4 flex flex-col items-center">
-          <img src="https://via.placeholder.com/100.png?text=Logo" alt="Certification Logo" class="mb-4">
-          <h3 class="text-xl font-semibold mb-2">Certification 3</h3>
-          <p class="text-gray-600 mb-2 text-center">Issued by Provider</p>
-          <span class="text-sm text-gray-500">2023</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Resume</h2>
-      <p class="text-lg mb-8">Download or view my resume to learn more about my skills and experience.</p>
-      <div class="flex justify-center space-x-4">
-        <a href="resume.pdf" download class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-md transition-colors">
-          Download Resume
-        </a>
-        <a href="resume.pdf" target="_blank" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-md transition-colors">
-          View Resume
+        <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-6 flex flex-col items-center">
+          <img src="https://via.placeholder.com/
