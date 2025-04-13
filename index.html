@@ -16,8 +16,8 @@
             accent: '#b56576', // Changed to a blue shade
           },
           boxShadow: {
-            'card': '0 4px 6px rgba(0, 0, 0, 0.1)',
-            'card-hover': '0 10px 15px rgba(0, 0, 0, 0.2)',
+            'card': '0 4px 6px rgba(0, 0, 0, 0.2)',
+            'card-hover': '0 10px 15px rgba(0, 0, 0, 0.4)',
           }
         }
       }
@@ -85,16 +85,16 @@
     <h2 class="text-4xl font-bold mb-4 text-gray-900 border-b-4 border-accent inline-block pb-1">About Me</h2>
     <div class="flex flex-col md:flex-row items-start">
       <div class="md:w-[90%] md:pr-6">
-        <p class="text-base text-gray-800">
+        <p class="text-[1.06rem] text-gray-800">
           Throughout my journey as a Computer Science graduate, I've explored deep learning in medical imaging, built robust recommendation systems using ML algorithms, 
-          and developed a AI-based vision-transformer model for emotion analysis—showcasing my passion for leveraging AI to enhance human value. 
+          developed a AI-based vision-transformer model for emotion analysis, and integrated AI as tool for digital detox—showcasing my passion for leveraging AI to enhance human value. 
           I thrive on designing cloud-first, scalable, fault-tolerant systems. Beyond technical skills, my experience organizing cultural events and leading IEEE initiatives 
           has taught me the value of collaborative innovation. When I'm not coding, you'll find me sharing knowledge through workshops, and continuously 
           exploring emerging AI technologies that promise to shape a better world.
         </p>
       </div>
       <div class="mt-6 md:mt-0 md:w-[10%] flex justify-center md:justify-end">
-        <img src="myself1.png" alt="Your Photo" class="w-40 md:w-36 rounded-full shadow-2xl" />
+        <img src="myself1.png" alt="Your Photo" class="w-48 md:w-40 rounded-full shadow-2xl" />
       </div>
     </div>
   </div>
@@ -102,10 +102,10 @@
 
 
   <!-- Resume Section (After About) -->
-  <section id="resume" class="py-16 bg-gray-200 scroll-mt-8">
+  <section id="resume" class="py-10 bg-[#E8E9EB] scroll-mt-16">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h2 class="text-4xl font-bold mb-6 text-gray-900 border-b-4 border-accent inline-block pb-1">Resume</h2>
-      <p class="text-lg text-gray-700 mb-8">
+      <p class="text-lg text-gray-800 mb-8">
         Explore my resume to see a comprehensive overview of my projects, skills, and professional experience.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -136,63 +136,64 @@
   </section>
 
   <!-- Portfolio Section - Removed gradient -->
-  <section id="portfolio" class="py-16 bg-white scroll-mt-8">
+  <section id="portfolio" class="py-16 bg-[#FFFAFA] scroll-mt-8">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-10 text-gray-900 border-b-4 border-accent inline-block pb-1">Portfolio</h2>
       <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <!-- Project Card 1 -->
         <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <img src="pnuemonia.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 1</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">LungVision: Deep Learning for Automated Chest X-Ray Classification</h3>
             <p class="text-gray-600 mb-4">
-              A brief overview of the project's challenge, innovative approach, and key technologies.
+              Developed a deep convolutional neural-network which can classify chest x-ray images while detecting 
+              pnuemonia with a 90% accuracy .
             </p>
-            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
+            <a href="https://github.com/swanithambadas/ChestXray-DeepLearning-Project" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
         <!-- Project Card 2 -->
         <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <img src="brs.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-2xl">
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 2</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">NextChapter: Personalized Book Suggestions Using AI/ML Algorithms</h3>
             <p class="text-gray-600 mb-4">
-              A brief overview of the project's challenge, innovative approach, and key technologies.
+              Built a recommendation system using collaborative filtering and content-based filtering techniques to suggest books based on user preferences.
             </p>
-            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
+            <a href="https://github.com/swanithambadas/BookRecommendationSystem-DIC-Project" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
         <!-- Project Card 3 -->
         <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <img src="face.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 3</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">SentioSync: Unifying Multimodal Cues for Emotion Detection Using Vision-Transformers</h3>
             <p class="text-gray-600 mb-4">
-              A brief overview of the project's challenge, innovative approach, and key technologies.
+              Engineered a custom vision-transformer model to analyze facial expressions and body poses, achieving 95% accuracy in emotion detection.
             </p>
             <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
         <!-- Project Card 4 -->
         <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <img src="ride.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 4</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">UrbanNexus: Scalable Microservices based Commute System</h3>
             <p class="text-gray-600 mb-4">
-              A brief overview of the project's challenge, innovative approach, and key technologies.
+              Designed a scalable microservices architecture system for a ride-sharing platform, ensuring high availability and fault tolerance using Docker and AWS.
             </p>
-            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
+            <a href="https://github.com/swanithambadas/Uber_microservice" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>
         <!-- Project Card 5 -->
         <div class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="https://via.placeholder.com/400x200.png?text=Project+Thumbnail" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
+          <img src="detox.png" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl">
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-gray-800">AI Project 5</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">DetoxDial - "Ditch distractions, dominate your day"</h3>
             <p class="text-gray-600 mb-4">
-              A brief overview of the project's challenge, innovative approach, and key technologies.
+              Collaborated on building AI-powered platform that leverages behavioural analytics to provide personalized multi-modal interventions for digital detoxification. 
             </p>
-            <a href="#" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
+            <a href="https://github.com/swanithambadas/Detox-Dial/tree/main" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline transition-colors">View Details</a>
           </div>
         </div>  
       </div>
@@ -200,7 +201,7 @@
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="py-16 bg-gray-200 scroll-mt-8">
+  <section id="certifications" class="py-16 bg-[#E8E9EB] scroll-mt-8">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-10 text-gray-900 border-b-4 border-accent inline-block pb-1">Certifications</h2>
       <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -245,7 +246,7 @@
   <!-- Footer -->
   <footer class="bg-[#0b132b] text-white py-6">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <p>&copy; 2023 Swanith Ambadas. All rights reserved.</p>
+      <p>&copy; 2025 Swanith Ambadas. All rights reserved.</p>
     </div>
   </footer>
 </body>
