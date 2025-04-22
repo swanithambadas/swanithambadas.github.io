@@ -336,20 +336,59 @@
   </section>
 
   <!-- Contact Section - Removed gradient -->
-  <section id="contact" class="relative py-16 bg-cover bg-center" style="background-image: url('contact.jpg');">
+  <section id="contact" class="relative py-16 bg-cover bg-center scroll-mt-8" style="background-image: url('contact.jpg');">
     <!-- Black overlay with 40% opacity -->
     <div class="absolute inset-0 bg-black opacity-40"></div>
     
     <div class="relative max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold mb-8 text-white border-b-4 border-accent inline-block pb-1">Contact Me</h2>
+      <h2 class="text-4xl font-bold mb-8 text-white border-b-4 border-white inline-block pb-1">Contact Me</h2>
       <p class="mb-6 text-lg text-white font-extrabold">
         Feel free to reach out via email or connect with me on LinkedIn and GitHub.
       </p>
-      <a href="mailto:ambadasswanith@gmail.com" class="inline-block bg-accent text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-accent transition-colors">
-        Get In Touch
-      </a>
+  
+      <!-- Contact Form Card -->
+      <div class="mt-8 max-w-md mx-auto bg-[#FFFAFA] rounded-xl shadow-card p-6">
+        <form id="contactForm" class="space-y-4">
+          <input type="text" name="name" placeholder="Your Name"
+                 class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" />
+          <input type="email" name="email" placeholder="Your Email" required
+                 class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" />
+                 <input
+                 type="text"
+                 name="subject"
+                 placeholder="Subject"
+                 class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+               />
+          <textarea name="message" rows="4" placeholder="Your Message"
+                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+          <button type="submit"
+                  class="w-full bg-accent text-white font-bold py-2 rounded-full hover:bg-opacity-90 transition-colors">
+            Send Message
+          </button>
+        </form>
+      </div>
     </div>
   </section>
+  
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value;
+      const email = this.email.value;
+      const message = this.message.value;
+      const subject = 'Contact from ' + name;
+      const body = 
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        message;
+  
+      window.location.href =
+        'mailto:ambadasswanith@gmail.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body='    + encodeURIComponent(body);
+    });
+  </script>  
+  
   
 
   <!-- Footer -->
