@@ -21,6 +21,9 @@
             card: "0 4px 6px rgba(0, 0, 0, 0.2)",
             "card-hover": "0 10px 15px rgba(0, 0, 0, 0.4)",
           },
+          textShadow: {
+    glow: "0 0 8px rgba(181,101,118,0.7)",
+  },
         },
       },
     };
@@ -32,17 +35,17 @@
   </style>
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-mono">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono">
   <!-- Header -->
-  <header
-    class="fixed top-0 left-0 right-0 bg-accent dark:bg-[#9d4f62] shadow-md border-b border-gray-700 z-50">
+  <header class="fixed inset-x-0 top-0 bg-accent dark:bg-[#9d4f62] z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-0 py-2 flex flex-col md:flex-row justify-between items-center">
       <!-- Logo and Name -->
-      <div class="flex items-center mb-2 md:mb-0">
+      <div class="flex items-center">
         <img src="logo.png" alt="Logo Icon" class="w-16 h-14 mr-2" />
         <span class="text-2xl font-extrabold text-gray-900">Swanith's Portfolio</span>
       </div>
       <!-- Navigation & Social Icons -->
+      <div class="hidden md:flex items-center space-x-6">
       <nav class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
         <ul class="flex flex-wrap w-full justify-center space-x-6">
           <li>
@@ -74,54 +77,85 @@
               class="text-[1.06rem] font-semibold text-gray-900 hover:text-white transition-colors">Contact</a>
           </li>
         </ul>
-        <!-- Theme Toggle Button -->
-<label for="theme-toggle" class="relative inline-flex items-center cursor-pointer">
-  <input type="checkbox" id="theme-toggle" class="sr-only peer">
-  <!-- Track -->
-  <div class="w-14 h-8 bg-[#1E1E2A] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#1E1E2A]"></div>
-  <!-- Icons Container -->
-  <div class="absolute flex items-center justify-between px-1.5 w-14 h-8 pointer-events-none">
-    <!-- Moon Icon (Light Mode) -->
-    <svg class="w-5 h-5 text-[#1E1E2A] peer-checked:hidden" fill="currentColor" viewBox="0 0 20 20">
-      <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd"/>
-    </svg>
-    <!-- Sun Icon (Dark Mode) -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 peer-checked:block text-[#1E1E2A]" >
-      <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
-    </svg>
-    
-  </div>
-</label>
       </nav>
+        <!-- Theme Toggle Button -->
+        <label for="theme-toggle" class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="theme-toggle" class="sr-only peer">
+          <!-- Track -->
+          <div
+            class="w-14 h-8 bg-[#1E1E2A] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#1E1E2A]">
+          </div>
+          <!-- Icons Container -->
+          <div class="absolute flex items-center justify-between px-1.5 w-14 h-8 pointer-events-none">
+            <!-- Moon Icon (Light Mode) -->
+            <svg class="w-5 h-5 text-[#1E1E2A] peer-checked:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
+                clip-rule="evenodd" />
+            </svg>
+            <!-- Sun Icon (Dark Mode) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+              class="size-5 peer-checked:block text-[#1E1E2A]">
+              <path
+                d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+            </svg>
+
+          </div>
+        </label>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section - Removed gradient -->
-  <section id="hero" class="relative pt-28 bg-cover bg-center" style="background-image: url(hero1.jpg)">
+  <section id="hero" class="opacity-0 translate-y-10 relative pt-28 bg-cover bg-center" style="background-image: url(hero1.jpg)">
     <!-- Transparent overlay -->
-    <div class="absolute inset-0 bg-black opacity-30"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
 
     <!-- Content -->
     <div class="relative max-w-7xl mx-auto px-4 py-20 text-center">
       <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
         Hi I'm Swanith Ambadas!
       </h1>
-      <p class="text-2xl md:text-2xl mb-8 text-white">
-        MSCS @ UB | Former SDE at Cognizant | Full-Stack (MERN) & AI/ML
-        Developer | Expertise in Docker, AWS & Microservice architecture.
+      <p class="mt-4 text-[clamp] text-white text-3xl">
+        I'm a <span
+        id="typed-text"
+        class="text-3xl font-bold text-[#BC7484]"
+        style="
+          text-shadow:
+            0 0 4px rgba(181,101,118,1),
+            0 0 8px rgba(181,101,118,0.8),
+            0 0 16px rgba(181,101,118,0.6),
+            0 0 24px rgba(181,101,118,0.4),
+            0 0 32px rgba(181,101,118,0.2);
+        "
+      ></span>
+      </p>
+      <span> </span>
+      <p class="mt-4 text-xl text-white">
+        MSCS @ UB | Former SDE at Cognizant | Expertise in Docker, AWS & Microservice architecture.
       </p>
     </div>
   </section>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  new Typed('#typed-text', {
+    strings: ["Full-Stack Developer", "Cloud Native Developer", "AI Engineer"],
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 750,
+    loop: true
+  });
+</script>
   <!-- About Section (Reduced Padding and Smaller Image) -->
-  <section id="about" class="py-6 bg-[#FFFAFA] dark:bg-[#1E1E2A] scroll-mt-16">
-    <div class="max-w-7xl mx-auto px-2">
-      <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100 border-b-4 border-accent inline-block pb-1">
+  <section id="about" class="opacity-0 translate-y-10 mx-auto px-4 py-12 scroll-mt-20 bg-[#FFFAFA] dark:bg-gray-900">
+    <div class="bg-[#EDE0E0]/60 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6">
+      <h2 class="text-3xl font-bold mb-6 border-b-4 border-accent inline-block pb-1">
         About Me
       </h2>
-      <div class="flex flex-col md:flex-row items-start">
-        <div class="md:w-[90%] md:pr-6">
-          <p class="text-[1.06rem] text-gray-800 dark:text-gray-200">
-            Throughout my journey as a Computer Science graduate, I've
+      <div class="flex flex-col md:flex-row items-center md:space-x-8">
+        <div class="flex-1 text-[1rem] leading-relaxed">
+          <!-- Your about text here -->
+          Throughout my journey as a Computer Science graduate, I've
             explored deep learning in medical imaging, built robust
             recommendation systems using ML algorithms, developed a AI-based
             vision-transformer model for emotion analysis, and integrated AI
@@ -133,22 +167,19 @@
             coding, you'll find me sharing knowledge through workshops, and
             continuously exploring emerging AI technologies that promise to
             shape a better world.
-          </p>
         </div>
-        <div class="mt-6 md:mt-0 md:w-[10%] flex justify-center md:justify-end">
-          <img src="myself1.png" alt="Your Photo" class="w-48 md:w-40 rounded-full shadow-2xl" />
-        </div>
+        <img src="myself1.png" alt="Photo"
+             class="mt-6 md:mt-0 w-40 h-40 rounded-full shadow-card" />
       </div>
     </div>
   </section>
 
   <!-- Resume Section (After About) -->
-  <section id="resume" class="py-10 bg-[#E8E9EB] dark:bg-[#1E1E2A] scroll-mt-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-200 border-b-4 border-accent inline-block pb-1">
-        Resume
-      </h2>
-      <p class="text-lg text-gray-800 dark:text-gray-200 mb-8">
+  <section id="resume" class=" =opacity-0 translate-y-10 container mx-auto px-4 py-12 scroll-mt-20 text-center">
+    <h2 class="text-3xl font-bold mb-4 border-b-4 border-accent inline-block pb-1">
+      Resume
+    </h2>
+    <p class="mb-8">
         Explore my resume to see a comprehensive overview of my projects,
         skills, and professional experience.
       </p>
@@ -171,20 +202,19 @@
               d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
           </svg>
         </a>
-      </div>
     </div>
   </section>
-
+  <!-- bg-[#FFFAFA] dark:bg-[#1E1E2A]  -->
   <!-- Portfolio Section - Removed gradient -->
-  <section id="portfolio" class="py-16 bg-[#FFFAFA] dark:bg-[#1E1E2A] scroll-mt-8">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-gray-200 border-b-4 border-accent inline-block pb-1">
-        Projects
-      </h2>
-      <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <section id="portfolio" class="opacity-0 translate-y-10 container mx-auto px-4 py-12 scroll-mt-20">
+    <h2 class="text-3xl font-bold text-center mb-10 border-b-4 border-accent inline-block pb-1">
+      Projects
+    </h2>
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         <!-- Project Card 1 -->
-        <div class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="pnuemonia.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl" />
+        <div class="bg-white/20 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6
+                  shadow-card transition-transform hover:scale-105 hover:shadow-card-hover">
+          <img src="pnuemonia.jpg" alt="LungVision" class="w-full h-48 object-cover rounded-xl mb-4" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-[#E0DCE0]">
               LungVision: Deep Learning for Automated Chest X-Ray
@@ -201,8 +231,9 @@
           </div>
         </div>
         <!-- Project Card 2 -->
-        <div class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="brs.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-2xl" />
+        <div class="bg-white/20 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6
+                  shadow-card transition-transform hover:scale-105 hover:shadow-card-hover">
+          <img src="brs.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-xl mb-4" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-[#E0DCE0]">
               NextChapter: Personalized Book Suggestions Using AI/ML
@@ -219,8 +250,9 @@
           </div>
         </div>
         <!-- Project Card 3 -->
-        <div class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="face.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl" />
+        <div class="bg-white/20 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6
+                  shadow-card transition-transform hover:scale-105 hover:shadow-card-hover">
+          <img src="face.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-xl mb-4" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-[#E0DCE0]">
               SentioSync: Unifying Multimodal Cues for Emotion Detection Using
@@ -236,8 +268,9 @@
           </div>
         </div>
         <!-- Project Card 4 -->
-        <div class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="ride.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl" />
+        <div class="bg-white/20 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6
+                  shadow-card transition-transform hover:scale-105 hover:shadow-card-hover">
+          <img src="ride.jpg" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-xl mb-4" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-[#E0DCE0]">
               UrbanNexus: Scalable Microservices based Commute System
@@ -252,8 +285,9 @@
           </div>
         </div>
         <!-- Project Card 5 -->
-        <div class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300">
-          <img src="detox.png" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-t-xl" />
+        <div class="bg-white/20 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6
+                  shadow-card transition-transform hover:scale-105 hover:shadow-card-hover">
+          <img src="detox.png" alt="Project Thumbnail" class="w-full h-48 object-cover rounded-xl mb-4" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-[#E0DCE0]">
               DetoxDial - "Ditch distractions, dominate your day"
@@ -268,12 +302,10 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
   <!-- Skills Section -->
-  <section id="skills" class="py-12 bg-[#FFFAFA] dark:bg-[#1E1E2A] scroll-mt-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-200 border-b-4 border-accent inline-block pb-1">
+  <section id="skills" class="opacity-0 translate-y-10 container mx-auto px-4 py-12 scroll-mt-20 text-center">
+      <h2 class="text-3xl font-bold mb-8 border-b-4 border-accent inline-block pb-1">
         Skills
       </h2>
       <div class="flex flex-wrap justify-center gap-6">
@@ -350,19 +382,17 @@
           <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Kubernetes</span>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="py-16 bg-[#E8E9EB] dark:bg-[#1E1E2A] scroll-mt-8">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center dark:text-[#E0DCE0] mb-6 text-gray-900 border-b-4 border-accent inline-block pb-1">
-        Certifications
-      </h2>
-      <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center">
+  <section id="certifications" class="opacity-0 translate-y-10 container mx-auto px-4 py-12 scroll-mt-20">
+    <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-accent inline-block pb-1">
+      Certifications
+    </h2>
+      <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <!-- Certification Card 1 -->
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="udemy.png" alt="Certification Logo" class="w-18 h-12 mb-2 mt-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1">
             Java Masterclass
@@ -378,7 +408,7 @@
         </div>
         <!-- Certification Card 2 -->
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="kode.png" alt="Certification Logo" class="w-16 h-14 mb-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1">
             Docker Training
@@ -394,7 +424,7 @@
         </div>
         <!-- Certification Card 3 -->
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="black.jpg" alt="Certification Logo" class="w-22 h-14 mb-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1">
             AI for Good - Hackathon
@@ -410,7 +440,7 @@
         </div>
         <!-- Certification Card 4 -->
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="UB.jpg" alt="Certification Logo" class="w-14 h-8 mb-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1 text-center">
             CSE Workshop - Cloud Computing - Speaker
@@ -426,7 +456,7 @@
         </div>
         <!-- Certification Card 5 -->
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="UB.jpg" alt="Certification Logo" class="w-14 h-8 mb-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1 text-center">
             CSE Workshop - DSA - Speaker
@@ -441,7 +471,7 @@
           </a>
         </div>
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="udemy.png" alt="Certification Logo" class="w-18 h-12 mb-2 mt-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1 text-center">
             Kubernetes
@@ -457,7 +487,7 @@
         </div>
         <!-- Certification Card 6 -->
         <div
-          class="bg-white dark:bg-[#2A2A38] rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
+          class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
           <img src="UB.jpg" alt="Certification Logo" class="w-14 h-8 mb-1" />
           <h3 class="text-xl font-semibold text-gray-800 dark:text-[#E0DCE0] mb-1 text-center">
             CSE Workshop - Python - Event Manager
@@ -472,53 +502,47 @@
           </a>
         </div>
       </div>
-    </div>
+
   </section>
 
   <!-- Contact Section - Removed gradient -->
-  <section id="contact" class="relative py-16 bg-cover bg-center scroll-mt-8"
-    style="background-image: url('contact.jpg')">
-    <!-- Black overlay with 40% opacity -->
-    <div class="absolute inset-0 bg-black opacity-40"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold mb-8 text-white border-b-4 border-accent inline-block pb-1">
+  <section id="contact" class="opacity-0 translate-y-10 relative py-16 bg-cover bg-center scroll-mt-20"
+    style="background-image:url('contact.jpg')">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="container mx-auto px-4 relative text-center">
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-4 border-accent inline-block pb-1">
         Contact Me
       </h2>
-      <p class="mb-6 text-lg text-white font-extrabold">
-        Feel free to reach out via email or connect with me on LinkedIn and
-        GitHub.
-      </p>
-
-      <!-- Contact Form Card -->
-      <div class="mt-8 max-w-md mx-auto bg-[#FFFAFA] dark:bg-[#2A2A38] rounded-xl shadow-card p-6">
+      <div class="max-w-md mx-auto bg-white/20 dark:bg-black/30 backdrop-blur-md
+                  rounded-2xl p-6 shadow-card">
         <form id="contactForm" class="space-y-4">
           <input type="text" name="name" placeholder="Your Name"
-            class="w-full p-2 border border-gray-300 dark:bg-[#383846] rounded-md focus:outline-none focus:ring-2 focus:ring-accent" />
+            class="w-full p-2 rounded-md bg-white/50 dark:bg-black/50 placeholder-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900" />
           <input type="email" name="email" placeholder="Your Email" required
-            class="w-full p-2 border border-gray-300 dark:bg-[#383846] rounded-md focus:outline-none focus:ring-2 focus:ring-accent" />
+            class="w-full p-2 rounded-md bg-white/50 dark:bg-black/50 placeholder-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900" />
           <input type="text" name="subject" placeholder="Subject"
-            class="w-full p-2 border border-gray-300 dark:bg-[#383846] rounded-md focus:outline-none focus:ring-2 focus:ring-accent" />
+            class="w-full p-2 rounded-md bg-white/50 dark:bg-black/50 placeholder-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900" />
           <textarea name="message" rows="4" placeholder="Your Message"
-            class="w-full p-2 border border-gray-300 dark:bg-[#383846] rounded-md focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+            class="w-full p-2 rounded-md bg-white/50 dark:bg-black/50 placeholder-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900"></textarea>
           <button type="submit"
             class="w-full bg-accent dark:bg-[#9d4f62] text-white font-bold py-2 rounded-full border-2 border-transparent hover:bg-white hover:text-accent hover:border-[#b56576] dark:hover:bg-white dark:hover:text-[#9d4f62] dark:hover:border-[#9d4f62] transition-colors">
             Send Message
           </button>
         </form>
-        <div class="flex items-center my-4">
-          <span class="flex-grow h-px bg-gray-500 dark:bg-[#E0DCE0]"></span>
-          <span class="mx-2 text-gray-700 dark:text-[#E0DCE0] uppercase text-sm">Or</span>
-          <span class="flex-grow h-px bg-gray-500 dark:bg-[#E0DCE0]"></span>
-        </div>
 
-        <!-- Social Icons -->
+
+        <div class="flex items-center my-4 text-white">
+          <span class="flex-grow h-px bg-white/50"></span>
+          <span class="mx-2 uppercase text-sm">Or</span>
+          <span class="flex-grow h-px bg-white/50"></span>
+        </div>
         <div class="flex justify-center space-x-8">
-          <a href="https://github.com/swanithambadas" target="_blank" class="transition-transform hover:scale-125">
+          <a href="https://github.com/swanithambadas" target="_blank"
+            class="hover:scale-125 transform transition-transform">
             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="w-10 h-10" />
           </a>
-          <a href="https://www.linkedin.com/in/swanith-ambadas/" target="_blank"
-            class="transition-transform hover:scale-125">
+          <a href="https://linkedin.com/in/swanith-ambadas" target="_blank"
+            class="hover:scale-125 transform transition-transform">
             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="w-10 h-10" />
           </a>
         </div>
@@ -556,7 +580,7 @@
   <script>
     const checkbox = document.getElementById('theme-toggle');
     const html = document.documentElement;
-  
+
     // Set initial state
     if (localStorage.getItem('theme') === 'dark') {
       html.classList.add('dark');
@@ -565,12 +589,52 @@
       html.classList.remove('dark');
       checkbox.checked = false;
     }
-  
+
     // Toggle handler
     checkbox.addEventListener('change', () => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', checkbox.checked ? 'dark' : 'light');
     });
-  </script>  
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // helper to trigger the fade+slide animation
+      const animateSection = sec => {
+        sec.classList.remove('opacity-0','translate-y-10');
+        sec.classList.add('opacity-100','translate-y-0','transition-all','duration-700','ease-out');
+      };
+    
+      // 1) Animate on load/scroll via IntersectionObserver
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateSection(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.20 });
+    
+      document.querySelectorAll('section[id]').forEach(sec => {
+        // start hidden in your markup: class="opacity-0 translate-y-10"
+        observer.observe(sec);
+      });
+    
+      // 2) Animate & smooth-scroll on any in-page link click
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+          const targetId = link.getAttribute('href');
+          const target = document.querySelector(targetId);
+          if (!target) return;            // guard
+          e.preventDefault();             // stop default jump
+          animateSection(target);         // fire the animation immediately
+          target.scrollIntoView({          // then smooth-scroll
+            behavior: 'smooth',
+            block: 'start'
+          });
+          history.replaceState(null, '', targetId); // update URL hash
+        });
+      });
+    });
+    </script>
 </body>
 </html>
