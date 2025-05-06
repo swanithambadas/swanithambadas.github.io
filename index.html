@@ -21,9 +21,6 @@
             card: "0 4px 6px rgba(0, 0, 0, 0.2)",
             "card-hover": "0 10px 15px rgba(0, 0, 0, 0.4)",
           },
-          textShadow: {
-    glow: "0 0 8px rgba(181,101,118,0.7)",
-  },
         },
       },
     };
@@ -32,6 +29,20 @@
     html {
       scroll-behavior: smooth;
     }
+    .clamp {
+    overflow: hidden;
+    max-height: 3rem;              /* roughly two lines of 1rem text */
+    transition: max-height 0.3s ease-in-out;
+  }
+  .clamp.expanded {
+    max-height: none;
+  }
+    
+  @keyframes float {
+    0%, 100%   { transform: translateY(0); }
+    50%        { transform: translateY(-10px); }
+  }
+
   </style>
 </head>
 
@@ -49,16 +60,16 @@
       <nav class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
         <ul class="flex flex-wrap w-full justify-center space-x-6">
           <li>
-            <a href="#hero"
-              class="text-[1.06rem] font-semibold text-gray-900 hover:text-white transition-colors">Home</a>
-          </li>
-          <li>
             <a href="#about"
               class="text-[1.06rem] font-semibold text-gray-900 hover:text-white transition-colors">About</a>
           </li>
           <li>
             <a href="#resume"
               class="text-[1.06rem] font-semibold text-gray-900 hover:text-white transition-colors">Resume</a>
+          </li>
+          <li>
+            <a href="#experience"
+              class="text-[1.06rem] font-semibold text-gray-900 hover:text-white transition-colors">Experience</a>
           </li>
           <li>
             <a href="#portfolio"
@@ -83,7 +94,7 @@
           <input type="checkbox" id="theme-toggle" class="sr-only peer">
           <!-- Track -->
           <div
-            class="w-14 h-8 bg-[#1E1E2A] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#1E1E2A]">
+            class="w-14 h-8 bg-[#1E1E2A] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-gray-900">
           </div>
           <!-- Icons Container -->
           <div class="absolute flex items-center justify-between px-1.5 w-14 h-8 pointer-events-none">
@@ -148,7 +159,8 @@
 </script>
   <!-- About Section (Reduced Padding and Smaller Image) -->
   <section id="about" class="opacity-0 translate-y-10 mx-auto px-4 py-12 scroll-mt-20 bg-[#FFFAFA] dark:bg-gray-900">
-    <div class="bg-[#EDE0E0]/60 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6">
+    <div class="bg-[#EDE0E0]/60 dark:bg-black/30 backdrop-blur-md rounded-2xl p-6
+                shadow-card transition-transform hover:shadow-card-hover">
       <h2 class="text-3xl font-bold mb-6 border-b-4 border-accent inline-block pb-1">
         About Me
       </h2>
@@ -169,7 +181,9 @@
             shape a better world.
         </div>
         <img src="myself1.png" alt="Photo"
-             class="mt-6 md:mt-0 w-40 h-40 rounded-full shadow-card" />
+      class="mt-6 md:mt-0 w-40 h-40 rounded-full animate-[float_2.5s_ease-in-out_infinite] 
+      shadow-[0_0_30px_rgba(181,101,118,1)]
+            dark:shadow-[0_0_20px_rgba(181,101,118,0.6)]"/>
       </div>
     </div>
   </section>
@@ -204,6 +218,155 @@
         </a>
     </div>
   </section>
+<!-- Experience Section -->
+<section
+  id="experience"
+  class="container mx-auto px-4 py-12 scroll-mt-20 opacity-0 translate-y-10"
+>
+  <h2
+    class="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100
+           border-b-4 border-accent inline-block pb-1"
+  >
+    Experience
+  </h2>
+
+  <div class="relative grid grid-cols-11 gap-y-8">
+    <!-- vertical center line -->
+    <div
+      class="col-start-6 col-end-7 absolute inset-y-0 left-1/2 w-1
+             -translate-x-1/2 bg-accent shadow-[0_0_20px_rgba(181,101,118,0.6)]"
+    ></div>
+
+    <!-- Card 1: spans cols 1–6, row 1 -->
+    <div class="col-start-1 col-end-6 row-start-1">
+      <div
+        class="w-full bg-[#EDE0E0]/60 dark:bg-black/30 border border-accent
+               rounded-2xl p-4 shadow-[0_0_10px_rgba(181,101,118,0.5)]"
+      >
+      <h3 class="text-xl font-semibold text:black dark:text-white"> 
+          Software Development Engineer
+        </h3>
+        <p class="text-sm text-gray-400">Jun 2022 – Dec 2023 | Cognizant India Pvt. Ltd.</p>
+        <div class="mt-2">
+          <ul class="desc clamp list-disc list-inside text-gray-900 dark:text-gray-200 space-y-2">
+            <li>Reduced manual efforts by 100 hours per market by analyzing requirements and building reusable base code.</li>
+            <li>Drove down processing time by 75% and error rates by 90% by integrating NSDL KYC and PAN validation into the credit-card workflow.</li>
+            <li>Led a team of 4 engineers to deliver integration features on schedule, cutting deployment cycles by 25% and post-release defects by 20%, while mentoring juniors and aligning client expectations.</li>
+            <li>Amplified test execution efficiency by 30% by collaborating and effectively communicating with the testing team to clear the backlog of automated test cases.</li>
+          </ul>          
+          <button class="toggle-desc text-accent font-medium mt-1 focus:outline-none">
+            See more
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble 1 -->
+    <div class="col-start-6 col-end-7 row-start-1 flex justify-center self-center">
+      <div
+        class="w-4 h-4 bg-accent rounded-full
+               shadow-[0_0_20px_rgba(181,101,118,0.6)]"
+      ></div>
+    </div>
+
+    <!-- Card 2: spans cols 7–13, row 2 -->
+    <div class="col-start-7 col-end-12 row-start-2">
+      <div
+        class="w-full bg-[#EDE0E0]/60 dark:bg-black/30 border border-accent
+               rounded-2xl p-4 shadow-[0_0_10px_rgba(181,101,118,0.5)]"
+      >
+      <h3 class="text-xl font-semibold text:black dark:text-white">Junior Software Development Engineer</h3>
+        <p class="text-sm text-gray-400">Jul 2021 – May 2022 | Cognizant India Pvt. Ltd.</p>
+        <div class="mt-2">
+          <ul class="desc clamp list-disc list-inside text-gray-900 dark:text-gray-200 space-y-2">
+            <li>Streamlined application processing by eliminating 3,000 ineligible cases in two months via automated API-based fraud risk checks – like low-income declines and fraudulent applications.</li>
+            <li>Expedited feature sign‑off by 20% by translating client feedback into technical requirements and delivering targeted demo sessions.</li>  
+            <li>Fostered collaboration with business analysts to refine requirements, cutting client review cycles by 15%.</li>
+          </ul>
+          <button class="toggle-desc text-accent font-medium mt-1 focus:outline-none">
+            See more
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble 2 -->
+    <div class="col-start-6 col-end-7 row-start-2 flex justify-center self-center">
+      <div
+        class="w-4 h-4 bg-accent rounded-full
+               shadow-[0_0_20px_rgba(181,101,118,0.6)]"
+      ></div>
+    </div>
+    <!-- Third card -->
+    <div class="col-start-1 col-end-6 row-start-3">
+      <div
+        class="w-full bg-[#EDE0E0]/60 dark:bg-black/30 border border-accent
+               rounded-2xl p-4 shadow-[0_0_10px_rgba(181,101,118,0.5)]"
+      >
+        <h3 class="text-xl font-semibold text:black dark:text-white">Software Development Engineer Intern</h3>
+        <p class="text-sm text-gray-400">Jan 2021 – Jun 2021 | Cognizant India Pvt. Ltd.</p>
+        <div class="mt-2">
+          <ul class="desc clamp list-disc list-inside text-gray-900 dark:text-gray-200 space-y-2">
+            <li>Enabled seamless service for 500+ concurrent users by decomposing requirements and architecting a full stack web app with Spring Boot, HTML/CSS, and JavaScript.</li> 
+            <li>API response times by 30% by structuring and developing 15+ RESTful endpoints based on in‑depth data‑flow analysis.</li> 
+          </ul>
+          <button class="toggle-desc text-accent font-medium mt-1 focus:outline-none">
+            See more
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble 2 -->
+    <div class="col-start-6 col-end-7 row-start-3 flex justify-center self-center">
+      <div
+        class="w-4 h-4 bg-accent rounded-full
+               shadow-[0_0_20px_rgba(181,101,118,0.6)]"
+      ></div>
+    </div>
+
+    <!-- Fourth card -->
+    <div class="col-start-7 col-end-12 row-start-4">
+      <div
+        class="w-full bg-[#EDE0E0]/60 dark:bg-black/30 border border-accent
+               rounded-2xl p-4 shadow-[0_0_10px_rgba(181,101,118,0.5)]"
+      >
+        <h3 class="text-xl font-semibold text:black dark:text-white">Engineer Intern</h3>
+        <p class="text-sm text-gray-400">May 2019 – Jul 2019 | Bharath Heavy Electricals Limited</p>
+        <div class="mt-2">
+          <ul class="desc clamp list-disc list-inside text-gray-900 dark:text-gray-200 space-y-2">
+            <li>Programmed and integrated PLCs with CNC machines at BHEL to automate manufacturing processes, focusing on designing and testing control systems for smooth operations.</li> 
+            <li>Gained hands-on experience troubleshooting real-time manufacturing issues, enhancing my skills in industrial automation and control logic design.</li> 
+          </ul>
+          <button class="toggle-desc text-accent font-medium mt-1 focus:outline-none">
+            See more
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble 2 -->
+    <div class="col-start-6 col-end-7 row-start-4 flex justify-center self-center">
+      <div
+        class="w-4 h-4 bg-accent rounded-full
+               shadow-[0_0_20px_rgba(181,101,118,0.6)]"
+      ></div>
+    </div>
+  </div>
+</section>
+
+<!-- toggle script (place near the end of your <body>) -->
+<script>
+  document.querySelectorAll('.toggle-desc').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = btn.previousElementSibling;
+      const expanded = p.classList.toggle('expanded');
+      btn.textContent = expanded ? 'See less' : 'See more';
+    });
+  });
+</script>
+
+
   <!-- bg-[#FFFAFA] dark:bg-[#1E1E2A]  -->
   <!-- Portfolio Section - Removed gradient -->
   <section id="portfolio" class="opacity-0 translate-y-10 container mx-auto px-4 py-12 scroll-mt-20">
@@ -389,7 +552,7 @@
     <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-accent inline-block pb-1">
       Certifications
     </h2>
-      <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <!-- Certification Card 1 -->
         <div
           class="bg-white dark:bg-black/30 rounded-xl shadow-card hover:shadow-card-hover hover:scale-105 transition-shadow duration-300 p-2 border-l-4 border-accent flex flex-col items-center">
